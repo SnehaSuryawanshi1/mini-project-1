@@ -1,0 +1,184 @@
+create table SUPERLOGIN(
+USERNAME VARCHAR2(30),
+PASSWORD VARCHAR2(30));
+
+create table  LOGIN(
+USERNAME	VARCHAR2(30),
+PASSWORD	VARCHAR2(30));
+
+create table  HDLevels(                                          
+LEVELCODE	VARCHAR2(30),
+LEVELNAME	VARCHAR2(30));
+
+insert into hdlevels values('l1','first level');
+                                                       
+create table CATEGORYIES(                                                                                      
+CATEGORYID	VARCHAR2(30),
+CATEGORYNAME	VARCHAR2(30),
+STATUS	VARCHAR2(30));
+
+insert into categoryies values('c1','mother board','yes');
+
+create table MODULE( 
+MODULEID	VARCHAR2(30),
+CATEGORYID	VARCHAR2(30),
+MODULENAME      VARCHAR2(30),
+STATUS	VARCHAR2(30));
+
+insert into module values('m1','c1','RAM chip','yes');
+
+create table SUPPORTTEAM(
+SUPPORTID	VARCHAR2(30),
+MODULEID	VARCHAR2(30),
+CATEGORYID	VARCHAR2(30),
+SUPPORTNAME	VARCHAR2(30));
+
+insert into supportteam values('s1','m1','c1','chanduTeam');
+
+create table SCHEDULES(
+TICKET	NUMBER,
+SCHEDULEDATE	VARCHAR2(30));
+
+create table REGISTRATION( 
+FIRSTNAME	VARCHAR2(30),
+LASTNAME	VARCHAR2(30),
+ADDRESS	VARCHAR2(30),
+PHONENO	NUMBER,
+CITY	VARCHAR2(30),
+STATE	VARCHAR2(30),
+COUNTRY	VARCHAR2(30),
+GENDER	VARCHAR2(30),
+ZIPCODE	NUMBER,
+EMAIL_ID	VARCHAR2(30),
+CTYPE	VARCHAR2(30),
+USER_ID	VARCHAR2(30),
+PASSWORD	VARCHAR2(30),
+CONFORMATIONPASSWORD	VARCHAR2(30),
+HINTQUESTION	VARCHAR2(30),
+HINTSOLUTION	VARCHAR2(30));
+
+
+create table FORWARD(
+TICKET	NUMBER,
+FROMNAME	VARCHAR2(30),
+TONAME	VARCHAR2(30),
+STATUS	VARCHAR2(30));
+
+		
+ 
+create table SUPERUSERPROFILE(
+FIRSTNAME	VARCHAR2(30),
+LASTNAME	VARCHAR2(30),
+ADDRESS	VARCHAR2(30),
+PHONENO	NUMBER,
+STATE	VARCHAR2(30),
+CITY	VARCHAR2(30),
+COUNTRY	VARCHAR2(30),
+ZIPCODE	NUMBER,
+GENDER	VARCHAR2(30),
+EMAILID	VARCHAR2(30),
+USER_ID	VARCHAR2(30),
+PASSWORD	VARCHAR2(30),
+CONFORMATIONPASSWORD	VARCHAR2(30),
+HINTQUESTION	VARCHAR2(30),
+HINTANSWER	VARCHAR2(30));
+
+insert into superuserprofile values('chandu','sekhar','bbl',55918,'A.P','bbl','India',
+535558,'male','ics_sekhar@yahoo.co.in','CUchandu','chandu','chandu','your name?','chandu');
+
+create table HDEMPLOYEE( LEVELNAME	VARCHAR2(30),
+USER_ID	VARCHAR2(30),
+EMPLOYEENAME	VARCHAR2(30),
+ADDRESS	VARCHAR2(30),
+CITY	VARCHAR2(30),
+STATE	VARCHAR2(30),
+COUNTRY	VARCHAR2(30),
+ZIPCODE	NUMBER,
+PHONENUMBER	NUMBER,
+EMAILID	VARCHAR2(30));
+
+create table PROBLEMREQUEST(
+TICKET	NUMBER,
+CATEGORYID 	VARCHAR2(30),
+MODULEID	VARCHAR2(30),
+PROBLEMDESCRIPTION	VARCHAR2(30),
+LASTSOLUTION	VARCHAR2(30),
+USER_ID	VARCHAR2(30),
+PROBLEMREPORTDATE	VARCHAR2(30),
+FORWARD VARCHAR2(30),
+REPLY VARCHAR2(30));
+
+		
+create table HDMESSAGES(
+TONAME 	VARCHAR2(50),
+FROMNAME	VARCHAR2(50),
+SUBJECT	VARCHAR2(30),
+MESSAGE	VARCHAR2(2000),
+SENTDATE	VARCHAR2(30));
+
+create table PROBLEMHISTORY(
+TICKET	NUMBER,
+PROBLEMDATE 	VARCHAR2(30),
+PROBLEMDESCRIPTION	VARCHAR2(30),
+SOLUTION	VARCHAR2(30),
+SOLUTIONBY	VARCHAR2(30),
+SOLUTIONDATE	VARCHAR2(30),
+STATUS	VARCHAR2(30));
+
+create table HDCOMPANYINFO(
+LOCATION_ID VARCHAR2(20),
+LOCATION_NAME VARCHAR2(30),
+COMPANY_NAME VARCHAR2(30),
+USER_ID VARCHAR2(30),
+address varchar2(50),
+city  varchar2(20),
+state varchar2(30),
+zip number,
+phone number);
+
+insert into hdcompanyinfo values('loc1','HYD','wipro','CUchandu','begumpet','HYD','A.P',500013,
+55918);
+
+create table hdemp1(
+levelname varchar2(30),
+categoryid varchar2(30),
+moduleid varchar2(30),
+supportid varchar2(30),
+user_id varchar2(30),
+employeename varchar2(30),
+address varchar2(30),
+city varchar2(30),
+state varchar2(30),
+country varchar2(30),
+zipcode number,
+phoneno number,
+email varchar2(30),
+password varchar2(30),
+password2 varchar2(30),
+hintquestion varchar2(30),
+hintsolution varchar2(30));
+
+create table  level1messages(
+select1 varchar2(40), 
+from1 varchar2(40),
+subject varchar2(200),
+compose1  varchar2(2000),
+date1 varchar2(20));
+
+create table  level2messages(
+select1 varchar2(40), 
+from1 varchar2(40),
+subject varchar2(200),
+compose1  varchar2(2000),
+date1 varchar2(20));
+
+create table  level3messages(
+select1 varchar2(40), 
+from1 varchar2(40),
+subject varchar2(200),
+compose1  varchar2(2000),
+date1 varchar2(20));
+
+create table USERINFO(
+companyname VARCHAR2(30),
+user_id VARCHAR2(30));
